@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>la-trace.com blog</title>
+    <link>https://la-trace.github.io/</link>
+    <description>Recent content on la-trace.com blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-FR</language>
+    <lastBuildDate>Tue, 26 Dec 2017 10:07:24 +0100</lastBuildDate>
+    
+	<atom:link href="https://la-trace.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>V3 et publication Open Source</title>
+      <link>https://la-trace.github.io/post/v3-migration-open-source/</link>
+      <pubDate>Tue, 26 Dec 2017 10:07:24 +0100</pubDate>
+      
+      <guid>https://la-trace.github.io/post/v3-migration-open-source/</guid>
+      <description>&lt;h1 id=&#34;la-trace-com-v3&#34;&gt;la-trace.com v3&lt;/h1&gt;
+
+&lt;h2 id=&#34;tl-dr&#34;&gt;tl;dr&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;La version 3 de la-trace.com est actuellement disponible en test à l&amp;rsquo;adresse
+suivante &lt;a href=&#34;v3.la-trace.com&#34;&gt;https://v3.la-trace.com/&lt;/a&gt;. Il s&amp;rsquo;agit d&amp;rsquo;une réécriture
+&lt;strong&gt;complète&lt;/strong&gt; qui sera désormais &lt;strong&gt;opensource&lt;/strong&gt;. Le code est hébérgé sur
+&lt;a href=&#34;https://github.com/la-trace&#34;&gt;https://github.com/la-trace&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
