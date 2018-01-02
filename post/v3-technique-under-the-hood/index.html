@@ -5,18 +5,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Posts</title>
-  <meta property="og:title" content="Posts" />
-  <meta name="twitter:title" content="Posts" />
+  <title>V3 Technique Under the Hood</title>
+  <meta property="og:title" content="V3 Technique Under the Hood" />
+  <meta name="twitter:title" content="V3 Technique Under the Hood" />
+  <meta name="description" content="Voici un petit point technique sur les technologies utilisées pour la refonte de
+la v3 : Base de données, API, Front End et hébergement.
+
+">
+  <meta property="og:description" content="Voici un petit point technique sur les technologies utilisées pour la refonte de
+la v3 : Base de données, API, Front End et hébergement.
+
+">
+  <meta name="twitter:description" content="Voici un petit point technique sur les technologies utilisées pour la refonte de
+la v3 : Base de données, API, Front End et hébergement.
+
+">
   <meta name="author" content=""/>
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://la-trace.github.io/post/" />
+  <meta property="og:url" content="https://la-trace.github.io/post/v3-technique-under-the-hood/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="la-trace.com blog" />
 
   <meta name="generator" content="Hugo 0.31.1" />
-  <link rel="canonical" href="https://la-trace.github.io/post/" />
-  <link rel="alternate" href="https://la-trace.github.io/post/index.xml" type="application/rss+xml" title="la-trace.com blog">
+  <link rel="canonical" href="https://la-trace.github.io/post/v3-technique-under-the-hood/" />
+  <link rel="alternate" href="" type="application/rss+xml" title="la-trace.com blog">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -114,14 +126,34 @@
 
 
     
+  
+  
+  
+
+
+
+
+  
+
   <header class="header-section ">
+    
     <div class="intro-header no-img">
+      
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="page-heading">
-              <h1>Posts</h1>
-              <hr class="small">
+            <div class="post-heading">
+              <h1>V3 Technique Under the Hood</h1>
+                
+                
+                  <span class="post-meta">
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on January 2, 2018
+  &nbsp;|&nbsp; <i class="fa fa-clock-o"></i> 1 min (198 mots)
+  
+</span>
+
+
+                
             </div>
           </div>
         </div>
@@ -129,74 +161,63 @@
     </div>
   </header>
 
+
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        <div class="posts-list">
-          
-            <article class="post-preview">
-              <a href="https://la-trace.github.io/post/v3-technique-under-the-hood/">
-                <h2 class="post-title">V3 Technique Under the Hood</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on January 2, 2018
-              </p>
-              <div class="post-entry">
-                
-                  <p>Voici un petit point technique sur les technologies utilisées pour la refonte de
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Voici un petit point technique sur les technologies utilisées pour la refonte de
 la v3 : Base de données, API, Front End et hébergement.</p>
 
 <p></p>
-                  <a href="https://la-trace.github.io/post/v3-technique-under-the-hood/" class="post-read-more">[Read More]</a>
-                
-              </div>
 
-              
+<h4 id="base-de-données">Base de données</h4>
 
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://la-trace.github.io/post/v3-migration-open-source/">
-                <h2 class="post-title">V3 et publication Open Source</h2>
+<p>La base de données est intégralement migrée de <code>mySQL</code> vers <code>PostGIS</code>, c&rsquo;est un
+point majeur car c&rsquo;est une base avec un moteur <code>geospatial</code> qui donne la
+possibilité d&rsquo;implémenter tout un tas de fonctionnalités spécifiques aux données
+géographiques.</p>
 
-                
-              </a>
+<p>A titre d&rsquo;exemple les fichiers GPX ne sont plus stockés tel quel mais intégrés
+comme des formes géométriques directement dans la base, facilitant grandement
+les recherches par exemple.</p>
 
-              <p class="post-meta">
-                Posted on December 26, 2017
-              </p>
-              <div class="post-entry">
-                
-                  <h1 id="la-trace-com-v3">la-trace.com v3</h1>
+<h4 id="api">API</h4>
 
-<h2 id="tl-dr">tl;dr</h2>
+<p>L&rsquo;architecture de cette nouvelle version s&rsquo;appuie sur une API Rest, pouvant
+alimenter le site web mais aussi, plus tard, une application mobile. C&rsquo;est le
+langage <code>Go</code> qui a été employé pour cette API. Go est connu pour ses
+performances et sa simplicité. Par ailleurs, c&rsquo;est le langage que j&rsquo;utilise au
+quotidien dans mon activité professionnelle.</p>
 
-<blockquote>
-<p>La version 3 de la-trace.com est actuellement disponible en test à l&rsquo;adresse
-suivante <a href="v3.la-trace.com">https://v3.la-trace.com/</a>. Il s&rsquo;agit d&rsquo;une réécriture
-<strong>complète</strong> qui sera désormais <strong>opensource</strong>. Le code est hébérgé sur
-<a href="https://github.com/la-trace">https://github.com/la-trace</a></p>
-</blockquote>
+<h4 id="site-web-aka-front-end">Site Web aka Front End</h4>
 
-<p></p>
-                  <a href="https://la-trace.github.io/post/v3-migration-open-source/" class="post-read-more">[Read More]</a>
-                
-              </div>
+<p>Le site web utilise cette API Rest afin de mettre en scène les données. C&rsquo;est le
+framework Javascript <code>vue.js</code> qui a été choisi. C&rsquo;est un framework puissant avec
+une courbe d&rsquo;apprentissage assez courte.</p>
 
-              
+<h4 id="hébergement">Hébergement</h4>
 
-            </article>
-          
-        </div>
+<p>Toutes ces briques fonctionnelles sont embarquées sour forme de container
+<code>Docker</code>.</p>
+      </article>
+
+      <ul class="pager blog-pager">
         
-      </div>
+          <li class="previous">
+            <a href="https://la-trace.github.io/post/v3-migration-open-source/" data-toggle="tooltip" data-placement="top" title="V3 et publication Open Source">&larr; Previous Post</a>
+          </li>
+        
+        
+      </ul>
+
+
+      
+
     </div>
   </div>
+</div>
 
     <footer>
   <div class="container">
