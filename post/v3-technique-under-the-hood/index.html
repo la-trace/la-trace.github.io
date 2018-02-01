@@ -204,18 +204,9 @@ la v3 : Base de données, API, Front End et hébergement.</p>
 
 <p></p>
 
-<h4 id="base-de-données">Base de données</h4>
+<p><img src="/img/tech-logos.png" alt="logos" /></p>
 
-
-<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
-<div class="box" style="max-width:150px">
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img">
-      <img itemprop="thumbnail" src="/img/postgis.png" />
-    </div>
-    <a href="/img/postgis.png" itemprop="contentUrl"></a>
-  </figure>
-</div>
+<h4 id="1-base-de-données">1. Base de données</h4>
 
 <p>La base de données est intégralement migrée de <code>mySQL</code> vers <code>PostGIS</code>, c&rsquo;est un
 point majeur car c&rsquo;est une base avec un moteur <code>geospatial</code> qui donne la
@@ -226,18 +217,7 @@ géographiques.</p>
 comme des formes géométriques directement dans la base, facilitant grandement
 les recherches par exemple.</p>
 
-<h4 id="api">API</h4>
-
-
-
-<div class="box" style="max-width:150px">
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img">
-      <img itemprop="thumbnail" src="/img/golang.png" />
-    </div>
-    <a href="/img/golang.png" itemprop="contentUrl"></a>
-  </figure>
-</div>
+<h4 id="2-api">2. API</h4>
 
 <p>L&rsquo;architecture de cette nouvelle version s&rsquo;appuie sur une API Rest, pouvant
 alimenter le site web mais aussi, plus tard, une application mobile. C&rsquo;est le
@@ -245,35 +225,13 @@ langage <code>Go</code> qui a été employé pour cette API. Go est connu pour s
 performances et sa simplicité. Par ailleurs, c&rsquo;est le langage que j&rsquo;utilise au
 quotidien dans mon activité professionnelle.</p>
 
-<h4 id="site-web-aka-front-end">Site Web aka Front End</h4>
-
-
-
-<div class="box" style="max-width:150px">
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img">
-      <img itemprop="thumbnail" src="/img/vuejs.svg" />
-    </div>
-    <a href="/img/vuejs.svg" itemprop="contentUrl"></a>
-  </figure>
-</div>
+<h4 id="3-site-web-aka-front-end">3. Site Web aka Front End</h4>
 
 <p>Le site web utilise cette API Rest afin de mettre en scène les données. C&rsquo;est le
 framework Javascript <code>vue.js</code> qui a été choisi. C&rsquo;est un framework puissant avec
 une courbe d&rsquo;apprentissage assez courte.</p>
 
-<h4 id="déploiement-et-hébergement">Déploiement et Hébergement</h4>
-
-
-
-<div class="box" style="max-width:150px">
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img">
-      <img itemprop="thumbnail" src="/img/docker.png" />
-    </div>
-    <a href="/img/docker.png" itemprop="contentUrl"></a>
-  </figure>
-</div>
+<h4 id="4-déploiement-et-hébergement">4. Déploiement et Hébergement</h4>
 
 <p>Toutes ces briques fonctionnelles sont embarquées sour forme de container
 <code>Docker</code>.</p>
