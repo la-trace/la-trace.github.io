@@ -46,17 +46,17 @@ complète qui sera …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="la-trace.com blog" />
 
-  <meta name="generator" content="Hugo 0.31.1" />
+  <meta name="generator" content="Hugo 0.34" />
   <link rel="canonical" href="https://la-trace.github.io/post/v3-migration-open-source/" />
-  <link rel="alternate" href="" type="application/rss+xml" title="la-trace.com blog">
+  <link rel="alternate" href="https://la-trace.github.io/index.xml" type="application/rss+xml" title="la-trace.com blog">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="https://la-trace.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
-  <link rel="stylesheet" href="https://la-trace.github.io/css/highlighting.css" />
-  <link rel="stylesheet" href="https://la-trace.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://la-trace.github.io/css/codeblock.css" />
   <link rel="stylesheet" href="https://la-trace.github.io/css/highlight.min.css" />
+
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
@@ -167,8 +167,11 @@ complète qui sera …">
                 
                 
                   <span class="post-meta">
+  
+  
   <i class="fa fa-calendar-o"></i>&nbsp;Posted on December 26, 2017
-  &nbsp;|&nbsp; <i class="fa fa-clock-o"></i> 3 min (617 mots)
+  
+  
   
 </span>
 
@@ -207,18 +210,18 @@ remporté le <strong>premier prix du concours IGN/Géoportail en 2013</strong>, 
 constater que j&rsquo;avais de moins en moins de temps pour m&rsquo;occuper de ce projet que
 je développe et gère seul depuis le début.</p>
 
-<p>Néanmoins le site continue son petit bonhomme de chemin et continue de générer
+<p>Néanmoins le site a continué son petit bonhomme de chemin et génère toujours
 du trafic et bon nombre de <strong>traces GPS</strong> continuent d&rsquo;y être publiées.</p>
 
 <p>Le site n&rsquo;a jamais eu pour vocation de générer des revenus et les quelques
-publicité que j&rsquo;ai pu y mettre ont servi à m&rsquo;aider à financer l&rsquo;hébergement.
+publicités que j&rsquo;ai pu y mettre ont servi à m&rsquo;aider à financer l&rsquo;hébergement.
 J&rsquo;ai à chaque fois refusé les quelques propositions de rachat que j&rsquo;ai pu avoir.</p>
 
 <p>N&rsquo;ayant pas l&rsquo;envie de voir mourrir à petit feu ce projet qui m&rsquo;a
 tant apporté sur le plan professionnel comme sur le plan personnel, il était
 temps de trouver une <strong>solution pour péreniser le site et son contenu</strong>.</p>
 
-<p>Voilà maintenant plus d&rsquo;un an, j&rsquo;ai commencé une refonte complète du site :
+<p>Il y a maintenant plus d&rsquo;un an, j&rsquo;ai commencé une refonte complète du site :
 <strong>Base de données</strong>, <strong>API</strong>, <strong>front-end</strong> et <strong>hébergement</strong>, je suis reparti
 d&rsquo;une feuille blanche.</p>
 
@@ -226,8 +229,8 @@ d&rsquo;une feuille blanche.</p>
 
 <p><img src="https://media.giphy.com/media/XsUtdIeJ0MWMo/giphy.gif" alt="fail" /></p>
 
-<p>&hellip; J&rsquo;ai clairement sous estimé l&rsquo;ampleur de la tâche, développer à nouveau
-chaque brique s&rsquo;est avéré être un chantier colossal qui a eu raison de ma
+<p>C&rsquo;est le drame&hellip; J&rsquo;ai clairement sous estimé l&rsquo;ampleur de la tâche, développer à nouveau
+chaque brique s&rsquo;est avéré être un chantier énorme qui a eu raison de ma
 motivation à plusieurs reprises.</p>
 
 <p>J&rsquo;ai laissé le projet de côté des <strong>mois durant</strong>&hellip; et ce <strong>plusieurs fois</strong>&hellip;
@@ -240,7 +243,7 @@ clairement perdu un temps fou.</p>
 <h2 id="l-enjeu-de-la-v3-et-l-intérêt-de-l-open-source">L&rsquo;enjeu de la v3 et l&rsquo;intérêt de l&rsquo;Open Source</h2>
 
 <p>Le but est double : faire un <strong>lifting technique</strong> et ouvrir le projet en
-<strong>open source</strong>.</p>
+<strong>open source</strong> pour le pérenniser.</p>
 
 <h4 id="lifting-technique">Lifting technique:</h4>
 
@@ -253,8 +256,8 @@ n&rsquo;avait pas été éliminée.</p>
 Pendant ce temps les techologies, les outils et les méthodologies évoluent.
 Chaque mise à jour devient de plus en plus compliquée.</p>
 
-<p>Si vous n&rsquo;agissez pas vous vous retrouver vite avec un projet dit <strong>legacy</strong> :
-un projet inmaintenable où chaque intervention se termine par un hideux
+<p>Dans ce cas de figure, si vous n&rsquo;agissez pas vous vous retrouver vite avec
+un projet dit <strong>legacy</strong> : un projet inmaintenable où chaque intervention se termine par un hideux
 rustinage au sommet d&rsquo;un assemblage des plus douteux.</p>
 
 <blockquote>
@@ -270,8 +273,8 @@ rustinage au sommet d&rsquo;un assemblage des plus douteux.</p>
 d&rsquo;ouvrir le code en <code>opensource</code> sur github s&rsquo;est imposé tout naturellement.</p>
 
 <p>Désormais, chacun pourra apporter sa pierre à l&rsquo;édifice en contribuant au code
-source mais également en indiquant des bugs ou proposer des évolutions via le
-gestionnaire d&rsquo;issues mis à disposition par github.</p>
+source mais également en indiquant des bugs ou proposer des évolutions via <a href="https://github.com/la-trace/website/issues">le
+gestionnaire d&rsquo;issues</a> mis à disposition par github.</p>
 
 <p>Vous êtes libre de faire de <code>la-trace.com</code> l&rsquo;outil que vous souhaitez.</p>
 
@@ -290,14 +293,16 @@ communauté de contributeurs pour faire évoluer le site, n&rsquo;hésitez donc 
 participer ainsi qu&rsquo;à partager l&rsquo;information autour de vous !</p>
       </article>
 
-      <ul class="pager blog-pager">
-        
-        
-          <li class="next">
-            <a href="https://la-trace.github.io/post/v3-technique-under-the-hood/" data-toggle="tooltip" data-placement="top" title="V3 Technique Under the Hood">Next Post &rarr;</a>
-          </li>
-        
-      </ul>
+      
+        <ul class="pager blog-pager">
+          
+          
+            <li class="next">
+              <a href="https://la-trace.github.io/post/v3-technique-under-the-hood/" data-toggle="tooltip" data-placement="top" title="la-trace.com v3, d&#39;un point de vue Technique">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
 
 
       
@@ -327,7 +332,7 @@ participer ainsi qu&rsquo;à partager l&rsquo;information autour de vous !</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.34</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>
@@ -345,6 +350,9 @@ participer ainsi qu&rsquo;à partager l&rsquo;information autour de vous !</p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 <script src="https://la-trace.github.io/js/load-photoswipe.js"></script>
+
+
+
 
 
 

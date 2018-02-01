@@ -5,9 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>V3 Technique Under the Hood</title>
-  <meta property="og:title" content="V3 Technique Under the Hood" />
-  <meta name="twitter:title" content="V3 Technique Under the Hood" />
+  <title>la-trace.com v3, d&#39;un point de vue Technique</title>
+  <meta property="og:title" content="la-trace.com v3, d&#39;un point de vue Technique" />
+  <meta name="twitter:title" content="la-trace.com v3, d&#39;un point de vue Technique" />
   <meta name="description" content="Voici un petit point technique sur les technologies utilisées pour la refonte de
 la v3 : Base de données, API, Front End et hébergement.
 
@@ -26,17 +26,17 @@ la v3 : Base de données, API, Front End et hébergement.
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="la-trace.com blog" />
 
-  <meta name="generator" content="Hugo 0.31.1" />
+  <meta name="generator" content="Hugo 0.34" />
   <link rel="canonical" href="https://la-trace.github.io/post/v3-technique-under-the-hood/" />
-  <link rel="alternate" href="" type="application/rss+xml" title="la-trace.com blog">
+  <link rel="alternate" href="https://la-trace.github.io/index.xml" type="application/rss+xml" title="la-trace.com blog">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="https://la-trace.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
-  <link rel="stylesheet" href="https://la-trace.github.io/css/highlighting.css" />
-  <link rel="stylesheet" href="https://la-trace.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://la-trace.github.io/css/codeblock.css" />
   <link rel="stylesheet" href="https://la-trace.github.io/css/highlight.min.css" />
+
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
@@ -145,12 +145,15 @@ la v3 : Base de données, API, Front End et hébergement.
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
               <div class="post-heading">
-                <h1>V3 Technique Under the Hood</h1>
+                <h1>la-trace.com v3, d&#39;un point de vue Technique</h1>
                   
                   
                     <span class="post-meta">
+  
+  
   <i class="fa fa-calendar-o"></i>&nbsp;Posted on January 2, 2018
-  &nbsp;|&nbsp; <i class="fa fa-clock-o"></i> 1 min (198 mots)
+  
+  
   
 </span>
 
@@ -169,12 +172,15 @@ la v3 : Base de données, API, Front End et hébergement.
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
-              <h1>V3 Technique Under the Hood</h1>
+              <h1>la-trace.com v3, d&#39;un point de vue Technique</h1>
                 
                 
                   <span class="post-meta">
+  
+  
   <i class="fa fa-calendar-o"></i>&nbsp;Posted on January 2, 2018
-  &nbsp;|&nbsp; <i class="fa fa-clock-o"></i> 1 min (198 mots)
+  
+  
   
 </span>
 
@@ -200,6 +206,17 @@ la v3 : Base de données, API, Front End et hébergement.</p>
 
 <h4 id="base-de-données">Base de données</h4>
 
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box" style="max-width:150px">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/postgis.png" />
+    </div>
+    <a href="/img/postgis.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
 <p>La base de données est intégralement migrée de <code>mySQL</code> vers <code>PostGIS</code>, c&rsquo;est un
 point majeur car c&rsquo;est une base avec un moteur <code>geospatial</code> qui donne la
 possibilité d&rsquo;implémenter tout un tas de fonctionnalités spécifiques aux données
@@ -211,6 +228,17 @@ les recherches par exemple.</p>
 
 <h4 id="api">API</h4>
 
+
+
+<div class="box" style="max-width:150px">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/golang.png" />
+    </div>
+    <a href="/img/golang.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
 <p>L&rsquo;architecture de cette nouvelle version s&rsquo;appuie sur une API Rest, pouvant
 alimenter le site web mais aussi, plus tard, une application mobile. C&rsquo;est le
 langage <code>Go</code> qui a été employé pour cette API. Go est connu pour ses
@@ -219,24 +247,48 @@ quotidien dans mon activité professionnelle.</p>
 
 <h4 id="site-web-aka-front-end">Site Web aka Front End</h4>
 
+
+
+<div class="box" style="max-width:150px">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/vuejs.svg" />
+    </div>
+    <a href="/img/vuejs.svg" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
 <p>Le site web utilise cette API Rest afin de mettre en scène les données. C&rsquo;est le
 framework Javascript <code>vue.js</code> qui a été choisi. C&rsquo;est un framework puissant avec
 une courbe d&rsquo;apprentissage assez courte.</p>
 
-<h4 id="hébergement">Hébergement</h4>
+<h4 id="déploiement-et-hébergement">Déploiement et Hébergement</h4>
+
+
+
+<div class="box" style="max-width:150px">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/docker.png" />
+    </div>
+    <a href="/img/docker.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
 
 <p>Toutes ces briques fonctionnelles sont embarquées sour forme de container
 <code>Docker</code>.</p>
       </article>
 
-      <ul class="pager blog-pager">
-        
-          <li class="previous">
-            <a href="https://la-trace.github.io/post/v3-migration-open-source/" data-toggle="tooltip" data-placement="top" title="V3 et publication Open Source">&larr; Previous Post</a>
-          </li>
-        
-        
-      </ul>
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://la-trace.github.io/post/v3-migration-open-source/" data-toggle="tooltip" data-placement="top" title="V3 et publication Open Source">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
 
 
       
@@ -266,7 +318,7 @@ une courbe d&rsquo;apprentissage assez courte.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.34</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>
@@ -284,6 +336,9 @@ une courbe d&rsquo;apprentissage assez courte.</p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 <script src="https://la-trace.github.io/js/load-photoswipe.js"></script>
+
+
+
 
 
 
